@@ -1,0 +1,98 @@
+
+window:
+  startup_mode:
+    Maximized
+  #dimensions:
+    #columns: 92
+    #lines: 20
+  padding:
+    x: 10
+    y: 10
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+scrolling: 
+  history: 10000
+  multiplier: 3
+
+background_opacity: 0.9
+
+font:
+  normal:
+    family: JetBrainsMono NF
+    style: Medium
+  bold:
+    family: JetBrainsMono NF
+    style: Bold
+  italic:
+    family: JetBrainsMono NF
+    style: MediumItalic
+  bold_italic:
+    family: JetBrainsMono NF
+    style: BoldItalic
+  size: 12
+draw_bold_text_with_bright_colors: true
+
+# Colors (One Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#282c34'
+    foreground: '#abb2bf'
+
+  # Normal colors
+  normal:
+    # NOTE: Use '#131613' for the `black` color if you'd like to see
+    # black text on the background.
+    black:   '#282c34'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#abb2bf'
+
+  # Bright colors
+  bright:
+    black:   '#5c6370'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#ffffff'
+
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+    blink-interval: 500
+
+selection:
+  save_to_clipboard: false
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/zsh
+
+
+
+key_bindings:
+  - { key: Paste,                                       action: Paste          }
+  - { key: Copy,                                        action: Copy           }
+  - { key: L,         mods: Control,                    action: ClearLogNotice }
+  - { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
+  - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
+  - { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
+  - { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
+  - { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+  
+  - { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
+
+  - { key: N,              mods: Control,                    action: SpawnNewInstance      }
+
